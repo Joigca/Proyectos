@@ -1,4 +1,5 @@
 import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -52,7 +53,6 @@ public class Flujos_bytes {
 				}
 				
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -83,9 +83,49 @@ public class Flujos_bytes {
 	}
 	
 	//ESTE MÉTODO SE ENCARGARA DE CREAR UNA MISMA IMAGEN CON EFECTO ESPEJO.
-	public static void espejo(String img){
+	public static void espejo(String img) throws IOException {
 		
-		System.out.println("Fallo");
+		BufferedImage imagen;
+		File f = new File(img);
+		
+		//Input, Output de la imagen.
+		imagen = ImageIO.read(f);
+		
+		//Para poder rotar la imagen, copiaremos la imagen en otro BufferedImage.
+		BufferedImage espejo = new BufferedImage(imagen.getHeight(), imagen.getWidth(),imagen.getType());
+		
+		//Utilizamos createFlipped para poder ejecutar el efecto espejo en la imagen.
+		espejo = createFlipped(imagen);
+		
+		//Creamos nuevo fichero con la imagen rotada
+		ImageIO.write(espejo, "JPG", new File("espejo.jpg"));
+		
 		System.out.println("Proceso finalizado.");
 	}
-}
+		
+		
+	
+	
+	
+	//AfineTransform "Clase importada al proyecto para poder ejecutar el efecto espejo en la imagen"
+	private static BufferedImage createFlipped(BufferedImage image){
+		
+        AffineTransform at = new AffineTransform();
+        at.concatenate(AffineTransform.getScaleInstance(-1, 1));
+        at.concatenate(AffineTransform.getTranslateInstance(-image.getWidth(), 0));
+        return createTransformed(image, at);
+        
+    }
+	//Llamaremos a Graphics2D, con nuestra copia de la imagen, para poder trabajar con los ejes x, y
+	private static BufferedImage createTransformed(BufferedImage image, AffineTransform at){
+	        
+		BufferedImage newImage = new BufferedImage(image.getWidth(), image.getHeight(),BufferedImage.TYPE_INT_RGB);
+	        Graphics2D g = newImage.createGraphics();
+	        g.transform(at);
+	        g.drawImage(image, 0, 0, null);
+	        g.dispose();
+	        return newImage;
+	     
+	    }	
+	}
+
