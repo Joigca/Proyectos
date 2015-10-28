@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class OrdenarFicheros {
 	
 	public static void main(String[] args) throws IOException {
-
+		
 		ordenar();
 
 	}

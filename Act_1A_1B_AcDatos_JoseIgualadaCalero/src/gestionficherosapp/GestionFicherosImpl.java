@@ -22,8 +22,9 @@ public class GestionFicherosImpl implements GestionFicheros {
 	}
 
 	private void actualiza() {
-
-		String[] ficheros = carpetaDeTrabajo.list(); // obtener los nombres
+		
+		// obtener los nombres
+		String[] ficheros = carpetaDeTrabajo.list(); 
 		// calcular el número de filas necesario
 		filas = ficheros.length / columnas;
 		if (filas * columnas < ficheros.length) {

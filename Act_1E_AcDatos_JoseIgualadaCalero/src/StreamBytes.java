@@ -14,6 +14,7 @@ public class StreamBytes {
 	}
 		
 	//Abrimos un fichero cualquiera
+	
 	public static void abrirFichero() throws IOException{
 		
 		Scanner sc = new Scanner(System.in);		

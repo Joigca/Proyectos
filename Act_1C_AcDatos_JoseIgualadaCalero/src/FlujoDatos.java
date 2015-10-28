@@ -17,6 +17,7 @@ public class FlujoDatos {
 		
 		//Declaramos los dos ficheros y lo enlazamos a los nuestros
 		File fichero1 = new File("fichero1.txt");
+		
 		File fichero2 = new File("fichero2.txt");
 		
 		//Ej.1
