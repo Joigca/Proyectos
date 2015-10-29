@@ -112,6 +112,7 @@ public class GestionLibros {
 		Libro libro = new Libro(titulo, autor, anyo, editor, numPagina);
 		
 		intentarCerrar(sc);
+		
 		almacen.guardarLibro(libro, fichero);
 	}
 	
