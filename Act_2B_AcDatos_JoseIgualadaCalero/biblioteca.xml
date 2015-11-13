@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <biblioteca>
 <libro>
-<titulo>Titulo1</titulo>
-<autor>Autor1</autor>
+<titulo anyo="2001">Titulo1</titulo>
+<autor>
+<nombre>Autor1</nombre>
+<nombre>Autor11</nombre>
+</autor>
 <editor>Editor1</editor>
 <numPagina>201</numPagina>
 </libro>
 <libro>
-<titulo>Titulo2</titulo>
-<autor>Autor2</autor>
+<titulo anyo="2002">Titulo2</titulo>
+<autor>
+<nombre>Autor2</nombre>
+<nombre>Autor22</nombre>
+</autor>
 <editor>Editor2</editor>
 <numPagina>202</numPagina>
 </libro>
 <libro>
-<titulo>Titulo3</titulo>
-<autor>Autor3</autor>
+<titulo anyo="2003">Titulo3</titulo>
+<autor>
+<nombre>Autor3</nombre>
+<nombre>Autor33</nombre>
+</autor>
 <editor>Editor3</editor>
 <numPagina>203</numPagina>
 </libro>

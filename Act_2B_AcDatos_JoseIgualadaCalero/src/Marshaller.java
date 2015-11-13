@@ -67,19 +67,26 @@ public class Marshaller {
 			//CREAMOS ELEMENTOS PARA CADA UNO DE LOS ATRIBUTOS DE LIBRO
 			//LO GUARDAMOS EN TEXT PARA PODER UTILIZARLO
 			
-			Element tituloEle = dom.createElement("titulo");		
+			Element tituloEle = dom.createElement("titulo");
+			tituloEle.setAttribute("anyo", l.getAnyo());
 			Text tituloTexto = dom.createTextNode(l.getTitulo());
 			tituloEle.appendChild(tituloTexto);
 			LibroEle.appendChild(tituloEle);
 			
-			Element autorEle = dom.createElement("autor");		
-			Text autorTexto = dom.createTextNode(l.getAutor());
-			autorEle.appendChild(autorTexto);
+			Element autorEle = dom.createElement("autor");
+			Element nomAutorEle = dom.createElement("nombre");
+			Element nomAutorEle2 = dom.createElement("nombre");
+			
+			nomAutorEle.setTextContent(l.getAutor().get(0));
+			nomAutorEle2.setTextContent(l.getAutor().get(1));
+			
 			LibroEle.appendChild(autorEle);
+			autorEle.appendChild(nomAutorEle);
+			autorEle.appendChild(nomAutorEle2);
 			
 			Element anyoEle = dom.createElement("anyo");
 			Text anyoTexto = dom.createTextNode(l.getAnyo());
-			autorEle.appendChild(autorTexto);
+			anyoEle.appendChild(anyoTexto);
 			LibroEle.appendChild(autorEle);
 			
 			Element editorEle = dom.createElement("editor");

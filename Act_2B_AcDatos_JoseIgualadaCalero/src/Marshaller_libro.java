@@ -8,9 +8,11 @@ public class Marshaller_libro {
 	public static void main(String[] args){
 		
 		ArrayList<Libro> libros = new ArrayList<Libro>();
-		Libro libro1 = new Libro("Titulo1", "Autor1", "2001", "Editor1", "201");
-		Libro libro2 = new Libro("Titulo2", "Autor2", "2002", "Editor2", "202");
-		Libro libro3 = new Libro("Titulo3", "Autor3", "2003", "Editor3", "203");
+		
+		Libro libro1 = new Libro("Titulo1", "Autor1", "Autor11" , "2001", "Editor1", "201");
+		Libro libro2 = new Libro("Titulo2", "Autor2", "Autor22", "2002", "Editor2", "202");
+		Libro libro3 = new Libro("Titulo3", "Autor3", "Autor33", "2003", "Editor3", "203");
+		
 		
 		libros.add(libro1);
 		libros.add(libro2);

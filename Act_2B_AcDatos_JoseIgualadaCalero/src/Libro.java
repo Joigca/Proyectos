@@ -1,8 +1,9 @@
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Libro implements Serializable{
 	private String titulo;
-	private String autor;
+	private ArrayList<String> autor;
 	private String anyo;
 	private String editor;
 	private String numPagina;
@@ -11,13 +12,15 @@ public class Libro implements Serializable{
 		
 	}
 	
-	public Libro(String titulo, String autor, String anyo, String editor, String numPagina){
+	public Libro(String titulo, String nombre, String apellido, String anyo, String editor, String numPagina){
 		
+		this.autor = new ArrayList<String>();
 		this.titulo = titulo;
-		this.autor = autor;
 		this.anyo = anyo;
 		this.editor = editor;
 		this.numPagina = numPagina;
+		this.autor.add(nombre);
+		this.autor.add(apellido);
 	}
 
 	public String getTitulo() {
@@ -25,15 +28,15 @@ public class Libro implements Serializable{
 	}
 
 	public void setTitulo(String titulo) {
-		titulo = titulo;
+		this.titulo = titulo;
 	}
 
-	public String getAutor() {
+	public ArrayList<String> getAutor() {
 		return autor;
 	}
 
-	public void setAutor(String autor) {
-		autor = autor;
+	public void setAutor(ArrayList<String> autor) {
+		this.autor = autor;
 	}
 
 	public String getAnyo() {
@@ -58,12 +61,6 @@ public class Libro implements Serializable{
 
 	public void setNumPagina(String numPagina) {
 		numPagina = numPagina;
-	}
-	
-	public void print(){
-		
-		System.out.println("Título: " + getTitulo() + ", escrito por " + getAutor() + " en " + getAnyo());
-		
 	}
 	
 }
