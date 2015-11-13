@@ -26,8 +26,10 @@ public class Almacen {
 			
 		} catch (IOException e) {			
 			e.printStackTrace();			
-		} finally{			
-			intentarCerrar(out);			
+		} finally{
+			
+			intentarCerrar(out);	
+			
 		}
 	}
 	
