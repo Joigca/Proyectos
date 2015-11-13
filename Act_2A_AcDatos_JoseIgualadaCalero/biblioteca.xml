@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+	<libro>
+		<titulo>Libro1</titulo>
+		<autor>Autor1</autor>
+		<anyo>2001</anyo>
+		<editor>Editor1</editor>
+		<numPagina>201</numPagina>
+	</libro>	
+	<libro>
+		<titulo>Libro2</titulo>
+		<autor>Autor2</autor>
+		<anyo>2002</anyo>
+		<editor>Editor2</editor>
+		<numPagina>202</numPagina>
+	</libro>
+	<libro>
+		<titulo>Libro3</titulo>
+		<autor>Autor3</autor>
+		<anyo>2003</anyo>
+		<editor>Editor3</editor>
+		<numPagina>203</numPagina>
+	</libro>
+</biblioteca>
