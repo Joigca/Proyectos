@@ -8,6 +8,8 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -76,8 +78,8 @@ public class Parser {
 	
 		//Recuperamos los datos de cada Elemento Libro
 		String titulo = getTextValue(elementLibro, "titulo");
-		String autor = getTextValue(elementLibro, "autor");
-		String anyo = getTextValue(elementLibro, "anyo");
+		String autor = getSubtextValue(elementLibro, "autor");
+		String anyo = getAtrValue(elementLibro, "titulo");
 		String editor = getTextValue(elementLibro, "editor");
 		String numPagina = getTextValue(elementLibro, "numPagina");
 		
@@ -98,6 +100,29 @@ public class Parser {
 			
 		}		
 		return txtVal;		
+	}
+	
+	//METODO PARA COGER TODOS LOS VALORES DENTRO DE UNA ETIQUETA
+	private String getSubtextValue(Element ele, String tag){
+		String textVal = null;
+		NodeList nodeList = ele.getElementsByTagName(tag);
+		if(nodeList != null && nodeList.getLength() > 0){
+			Element element = (Element) nodeList.item(0);
+			textVal = ( (Node) element.getChildNodes()).getTextContent();
+		}
+		
+		return textVal;
+		
+	}
+	
+	//METODOO PARA COGER EL ATRIBUTO DENTRO DE UNA ETIQUETA
+	private String getAtrValue(Element element, String atrTag){
+		
+		NodeList list = element.getElementsByTagName(atrTag);
+		//Mapa de nodos
+		NamedNodeMap namedNodeMap = list.item(0).getAttributes();
+		String anyo = namedNodeMap.item(0).getTextContent();
+		return anyo;
 	}
 	
 	public void print(){		
