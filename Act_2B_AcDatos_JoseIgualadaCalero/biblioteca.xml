@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<biblioteca>
+<libro>
+<titulo>Titulo1</titulo>
+<autor>Autor1</autor>
+<editor>Editor1</editor>
+<numPagina>201</numPagina>
+</libro>
+<libro>
+<titulo>Titulo2</titulo>
+<autor>Autor2</autor>
+<editor>Editor2</editor>
+<numPagina>202</numPagina>
+</libro>
+<libro>
+<titulo>Titulo3</titulo>
+<autor>Autor3</autor>
+<editor>Editor3</editor>
+<numPagina>203</numPagina>
+</libro>
+</biblioteca>
